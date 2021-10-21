@@ -1,0 +1,35 @@
+/*No twins pls !!!: Mr. Chitti, a robot is assigned a job of reporting to his boss Dr. Vaseegaran
+about the existence of twins in a group. Chitti’s job is just to report whether the group is distinct 
+or not. Even if one duplicate is present then the group is not unique. Help Mr. Chitti to report. 
+Input: an array of integers 
+output: Array distinct / Array not distinct */
+
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j;
+    printf("enter the number of array elements\n");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter any %d elements in array:\n ",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                printf("array elements are not distinct");
+                return 0;
+            }
+        }
+    }
+    printf("array elements are distinct");
+
+    return 0;
+}
