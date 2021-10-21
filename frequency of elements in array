@@ -1,0 +1,37 @@
+/*Frequency: After seeing the efficiency of Chitti, Dr. Vaseegaran assigns another job to him. The 
+new responsibility is to count the frequency of numbers present in a group of numbers. The 
+answer should be tabulated.*/
+
+#include <stdio.h>    
+int main()    
+{    
+    int i,j,n;
+    printf("enter the number of array elements\n");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter any %d elements in array:\n ",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    int f[n];    
+    int visited = -1;    
+    for(int i = 0; i < n; i++){    
+        int count = 1;    
+        for(int j = i+1; j < n; j++){    
+            if(a[i] == a[j]){    
+                count++;    
+                //To avoid counting same element again    
+                f[j] = visited;    
+            }    
+        }    
+        if(f[i] != visited)    
+            f[i] = count;    
+    }    
+    for(int i = 0; i < n; i++){    
+        if(f[i] != visited){    
+            printf("%d's: %d\n ", a[i],f[i]);    
+        }    
+    }    
+    return 0;    
+}    
