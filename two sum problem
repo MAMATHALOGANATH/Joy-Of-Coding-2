@@ -1,0 +1,25 @@
+/* Given an array of integers, and another integer K. Write a program to find indexes of two
+elements in an array which sum is equal to K. */
+
+#include<stdio.h>
+int main(){
+	int K,n;
+
+	printf("Enter the number of elements in array\n");
+	scanf("%d",&n);
+  int a[n];
+	printf("Enter the array elements\n");
+	for(int i=0;i<n;i++)
+		scanf("%d",&a[i]);
+
+	printf("Enter the value of 'K' :\t");
+	scanf("%d",&K);
+
+	for(int i=-0;i<n;i++){
+		for(int j=i+1;j<n;j++){
+			if(a[i]+a[j]==K){
+				printf("Indices are found at %d and %d\n",i,j);
+			}
+		}
+	}
+}
