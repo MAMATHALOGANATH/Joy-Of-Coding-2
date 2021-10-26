@@ -1,0 +1,36 @@
+/*
+Given an image, Sanvi is not comfortable viewing it in her computer/tab. She wants a better
+viewing experience. Write a program that keeps Sanvi happy.
+(Hint. Image is represented as matrix; The input is a matrix and the output is a matrix as well.)
+(Matrix Rotation)
+Input: 
+3 5 7
+9 6 4
+8 4 3
+Output:
+7 4 3
+5 6 7
+3 9 8
+*/
+
+#include <stdio.h>
+int main(){
+   int m, n, i, j; 
+   printf("Enter rows and columns :\n");
+   scanf("%d%d", &m, &n);
+   int  matrix[m][n], transpose[m][n];
+   printf("Enter elements of the matrix\n");
+   for (i= 0; i < m; i++)
+      for (j = 0; j < n; j++)
+         scanf("%d", &matrix[i][j]);
+   for (i = 0;i < m;i++)
+      for (j = 0; j < n; j++)
+         transpose[j][i] = matrix[i][j];
+   printf("Output of the matrix:\n");
+   for (i = 0; i< n; i++) {
+      for (j = 0; j < m; j++)
+         printf("%d\t", transpose[n-i-1][j]);
+      printf("\n");
+   }
+   return 0;
+}
