@@ -46,15 +46,15 @@ int main()
 		count=0;
 		while(sum<k)
 		{
-			sum+=a[j++];
+			sum=sum+a[j++];
 			count++;
 		}
 		if(sum==k)
 		{
 			flag=1;
 			printf("The sub array is [");
-			for(int l=i;l<i+count;l++)
-				printf("%d, ",a[l]);
+			for(int m=i;m<i+count;m++)
+				printf("%d, ",a[m]);
 			printf("\b\b]\n");
 			
 			printf("Indices range from %d to %d\n",i,i+count-1);
@@ -62,5 +62,5 @@ int main()
 		}	
 	}	
 	if(!flag)
-		printf("Not possible to obtain the sum\n");
+		printf("not possible to obtain the sum\n");
 }
